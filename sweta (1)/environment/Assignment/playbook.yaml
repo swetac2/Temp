@@ -1,0 +1,14 @@
+---
+- hosts: tag_linux
+  gather_facts: True
+  become: yes
+  
+  roles:
+    - { role: linux_setup }
+    
+- hosts: tag_debian
+  gather_facts: True
+  become: yes
+  
+  roles:
+    - { role: debian_setup }

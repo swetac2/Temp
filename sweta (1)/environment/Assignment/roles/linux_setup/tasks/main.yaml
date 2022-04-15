@@ -1,0 +1,13 @@
+---
+- name: Installing httpd  Server
+  yum: name=httpd state=latest
+
+- name: copying template index.j2 to use it as index.html
+  become: true 
+  template:
+    src: index.j2
+    dest: /var/www/html/index.html
+  
+- name: Start httpd Serverfor static webstie hosting
+  service: name=httpd state=started enabled=yes
+

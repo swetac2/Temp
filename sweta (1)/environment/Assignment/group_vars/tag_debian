@@ -1,0 +1,7 @@
+# env- debian
+
+---
+ansible_user                 : admin
+ansible_ssh_private_key_file : /home/ec2-user/.ssh/sweta.pem
+shell                        : /bin/bash
+hostname                     : debian

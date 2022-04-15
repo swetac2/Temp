@@ -1,0 +1,4 @@
+---
+- name: Restart Httpd service for apache to know 
+  service: name=httpd state=restarted
+ 

@@ -1,0 +1,13 @@
+---
+- name: Install httpd Server for Debian system
+  apt: name=apache2 state=latest
+    
+- name: copying template index.j2 to use it as index file for static website
+  become: true 
+  template:
+    src: index.j2
+    dest: /var/www/html/index.html
+      
+- name: Start httpd Server
+  service: name=apache2 state=started enabled=yes
+    
